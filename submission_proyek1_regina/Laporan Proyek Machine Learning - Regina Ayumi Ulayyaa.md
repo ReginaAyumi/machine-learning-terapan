@@ -38,7 +38,7 @@ Data yang digunakan dalam proyek ini adalah data Bank Marketing yang dipublikasi
 
 File yang akan digunakan adalah 'bank-full.csv' yang terdiri dari 45211 baris dengan target 'yes' sebanyak 5289 dan target 'no' sebanyak 39922 baris.
 
-##### Variabel-variabel pada Bank Marketing UCI dataset adalah sebagai berikut:
+#### Variabel-variabel pada Bank Marketing UCI dataset adalah sebagai berikut:
 Bank client data:
 - age (numeric)
 - job : tipe pekerjaan (categorical: "admin.",  "unknown", "unemployed", "management", "housemaid", "entrepreneur", "student", "blue-collar", "self-employed", "retired", "technician", "services") 
@@ -63,17 +63,20 @@ Atribut lain:
 Output variabel:
 - y:  apakah klien telah berlangganan deposito berjangka? (binary: "yes","no")
 
-**Exploratory Data Analysis (EDA)**:
-- Kategori pelanggan pada masing-masing fitur yang kemungkinan akan berlangganan deposit berjangka:
-    - Pekerjaan: management dan admin
-    - Status pernikahan : single
-    - Pendidikan: pendidikan tinggi
-    - Tipe komunikasi: seluler
-    - Tidak memiliki pinjaman rumah
-    - Tidak memiliki pinjaman pribadi
-    - Tidak memiliki kredit default
-    - Outcome dari kampanye marketing sebelumnya: sukses
-    - Bulan: Mei
+#### Exploratory Data Analysis (EDA):
+![eda bank marketing](https://github.com/ReginaAyumi/machine-learning-terapan/assets/90667044/9323a117-8a5c-49b6-b07c-2c6a29c98213)
+![eda bank marketing (2)](https://github.com/ReginaAyumi/machine-learning-terapan/assets/90667044/6363c3a3-c75c-4575-bff2-217a9f97199c)
+![eda bank marketing (1)](https://github.com/ReginaAyumi/machine-learning-terapan/assets/90667044/0d68fba8-8c13-42a3-b2cc-1e62ff417bf7)
+Kategori pelanggan pada masing-masing fitur yang kemungkinan akan berlangganan deposit berjangka:
+- Pekerjaan: management dan admin
+- Status pernikahan : single
+- Pendidikan: pendidikan tinggi
+- Tipe komunikasi: seluler
+- Tidak memiliki pinjaman rumah
+- Tidak memiliki pinjaman pribadi
+- Tidak memiliki kredit default
+- Outcome dari kampanye marketing sebelumnya: sukses
+- Bulan: Mei
 
 
 ## Data Preparation
