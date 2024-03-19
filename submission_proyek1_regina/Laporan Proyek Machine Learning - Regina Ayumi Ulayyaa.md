@@ -141,7 +141,7 @@ Berikut adalah algoritma *machine learning* yang digunakan:
 - ***Random Forest*** mengatasi masalah *overfitting* yang umum terjadi pada *decision trees* dengan menggunakan teknik *ensemble learning*. Algoritma ini memerlukan lebih banyak sumber daya komputasi dibandingkan dengan *decision trees* tunggal dan tidak se-spesifik dalam interpretasi model seperti *decision trees* tunggal. *Random Forest* dipilih karena kemampuannya untuk menangani *overfitting* dan menghasilkan prediksi yang lebih stabil.
 - ***XGBoost (Extreme Gradient Boosting)*** memiliki kinerja yang tinggi dalam berbagai tugas *machine learning*, terutama dalam *dataset* yang besar. Algoritma ini memiliki regularisasi yang efektif untuk mengurangi *overfitting*. Namun, *XGBoost* membutuhkan waktu komputasi yang lebih lama dibandingkan dengan beberapa algoritma lainnya karena iteratif. *XGBoost* dipilih karena kinerja yang tinggi dan kemampuannya untuk menangani data dengan jumlah fitur yang besar.
 
-##### Tahapan pemodelan *machine learning*
+#### Tahapan pemodelan *machine learning*
 1. *Import library* model yang akan digunakan:
 
 Tahap pertama adalah mengimpor *library* atau modul yang menyediakan implementasi dari model *machine learning* yang akan digunakan dalam proyek. *Library* yang digunakan yaitu *pandas* untuk mengolah data dan *Scikit-learn (sklearn)* untuk model-model klasifikasi seperti *Logistic Regression*, *Linear SVM*, *Decision Trees*, *Random Forest*, dan *XGBoost*.
@@ -179,17 +179,17 @@ $$ Recall = {TP \over(TP+FN)} $$
 $$ F1-score = {2* precision*recall \over precision+ recall} $$
 
 
-##### Hasil Evaluasi Model 
-<p align="center">
+#### Hasil Evaluasi Model 
+
 Tabel 1. Hasil evaluasi model *machine learning*
-</p>
-| *Classifier *        | *Train Accuracy* | *Test Accuracy* | *Precision (Class 0)* | *Recall (Class 0)* | *F1-score (Class 0)* | *Precision (Class 1)* | *Recall (Class 1)* | *F1-score (Class 1)* |
-|----------------------|------------------|-----------------|-----------------------|--------------------|----------------------|-----------------------|--------------------|----------------------|
-| *Logistic Regression*| 0.8318           | 0.8417          | 0.84                  | 0.84               | 0.84                 | 0.84                  | 0.85               | 0.84                 |
-| *Linear SVM*         | 0.8737           | 0.8620          | 0.89                  | 0.83               | 0.86                 | 0.84                  | 0.90               | 0.87                 |
-| *Decision Tree*      | 1.0000           | 0.7944          | 0.80                  | 0.79               | 0.79                 | 0.79                  | 0.80               | 0.80                 |
-| *Random Forest*      | 0.9970           | 0.8563          | 0.87                  | 0.84               | 0.85                 | 0.85                  | 0.87               | 0.86                 |
-| *XGBoost*            | 0.9709           | 0.8691          | 0.89                  | 0.85               | 0.87                 | 0.85                  | 0.89               | 0.87                 |
+
+| *Classifier*        | *Train Accuracy* | *Test Accuracy* | *Precision (Class 0)* | *Recall (Class 0)* | *F1-score (Class 0)* | *Precision (Class 1)* | *Recall (Class 1)* | *F1-score (Class 1)* |
+|--------------------|----------------|---------------|---------------------|------------------|---------------------|---------------------|------------------|---------------------|
+| *Logistic Regression*| 0.8318         | 0.8417        | 0.84                | 0.84             | 0.84                | 0.84                | 0.85             | 0.84                |
+| *Linear SVM*       | 0.8737         | 0.8620        | 0.89                | 0.83             | 0.86                | 0.84                | 0.90             | 0.87                |
+| *Decision Tree*     | 1.0000         | 0.7944        | 0.80                | 0.79             | 0.79                | 0.79                | 0.80             | 0.80                |
+| *Random Forest*      | 0.9970         | 0.8563        | 0.87                | 0.84             | 0.85                | 0.85                | 0.87             | 0.86                |
+| *XGBoost*            | 0.9709         | 0.8691        | 0.89                | 0.85             | 0.87                | 0.85                | 0.89             | 0.87                |
 
 
 Berdasarkan hasil evaluasi model pada Tabel 1, berikut adalah kesimpulan yang didapat:
@@ -206,4 +206,5 @@ Dalam hal ini, *XGBoost* menonjol sebagai model terbaik dengan kinerja yang stab
 
 ### Referensi
 [1] M. S. Başarslan and İ. D. Argun, "Classification Of a bank data set on various data mining platforms," 2018 Electric Electronics, Computer Science, Biomedical Engineerings' Meeting (EBBT), Istanbul, Turkey, 2018, pp. 1-4, doi: 10.1109/EBBT.2018.8391441. keywords: {Data mining;Classification algorithms;Decision trees;Data models;Training;Industries;Communications technology;data mining;banking;customer acquisition;data mining programs}
+
 [2] UCI Machine Learning Repository. (2012). Bank Marketing Data Set. Diakses dari https://archive.ics.uci.edu/dataset/222/bank+marketing
