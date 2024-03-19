@@ -80,37 +80,56 @@ Gambar 3. Visualisasi fitur *contact, poutcome*, dan *month* dengan kolom target
 
 Berikut kategori pelanggan pada masing-masing fitur yang kemungkinan akan berlangganan deposit berjangka:
 - Pekerjaan: *management* dan *admin*
+
 Manajemen dan Admin adalah dua kategori pekerjaan yang paling cenderung untuk berlangganan deposito berjangka. Dapat dilihat pada Gambar 1 bahwa persentase "yes" untuk kedua kategori ini lebih tinggi daripada persentase "no" dibanding kategori lainnya. Hal ini dapat diinterpretasikan bahwa orang-orang dengan jabatan manajerial atau administratif mungkin memiliki stabilitas keuangan dan pengetahuan yang cukup untuk mempertimbangkan investasi jangka panjang seperti deposito berjangka. 
 - Status pernikahan : *single*
+
 Status pernikahan "*single*" juga cenderung untuk berlangganan deposito berjangka. Pada 
 Gambar 1, perbandingan antara persentase "yes" lebih tinggi daripada "no" untuk kategori *single*. Ini mungkin disebabkan oleh kemandirian finansial yang lebih tinggi dan kemampuan untuk melakukan investasi secara mandiri tanpa pertimbangan pasangan.
 - Pendidikan: pendidikan tinggi
+
 Pelanggan dengan pendidikan tinggi lebih cenderung untuk berlangganan deposito berjangka. Ini dapat dijelaskan dengan asumsi bahwa orang dengan pendidikan lebih tinggi mungkin memiliki pemahaman yang lebih baik tentang manfaat investasi jangka panjang dan lebih siap secara finansial untuk melakukan investasi tersebut. Dapat dilihat pada Gambar 1 bahwa persentase "yes" untuk kategori ini lebih tinggi daripada persentase "no" dibanding kategori lainnya.
 - Tidak memiliki pinjaman pribadi,tidak memiliki pinjaman rumah
+
 Dapat dilihat pada Gambar 2 bahwa pelanggan yang tidak memiliki pinjaman rumah dan pinjaman pribadi cenderung untuk berlangganan deposito berjangka. Ini bisa menunjukkan bahwa mereka memiliki beban finansial yang lebih rendah dan lebih siap untuk melakukan investasi jangka panjang.
 - Tidak memiliki kredit *default*
+
 Dapat dilihat pada Gambar 2 bahwa pelanggan yang tidak memiliki catatan kredit *default* lebih cenderung untuk berlangganan deposito berjangka. Ini mungkin menandakan bahwa pelanggan tersebut memiliki riwayat kredit yang baik dan kemungkinan besar memiliki kestabilan keuangan yang cukup untuk melakukan investasi jangka panjang.
 - Tipe komunikasi: seluler
+
 Penggunaan komunikasi melalui seluler (telepon seluler) lebih cenderung menghasilkan pelanggan yang berlangganan deposito berjangka. Hal ini mungkin menunjukkan bahwa pelanggan yang menggunakan telepon seluler lebih aktif atau terhubung secara *digital*, yang juga dapat mencerminkan kesiapan untuk melakukan transaksi finansial secara elektronik, termasuk berlangganan deposito berjangka. Dapat dilihat pada Gambar 3 bahwa persentase "yes" untuk kategori ini lebih tinggi daripada persentase "no" dibanding kategori lainnya.
 - *Outcome* dari kampanye marketing sebelumnya: sukses
+
 Hasil positif dari kampanye pemasaran sebelumnya juga mempengaruhi kecenderungan pelanggan untuk berlangganan deposito berjangka. Ini menunjukkan bahwa pelanggan yang merespons positif terhadap kampanye pemasaran sebelumnya lebih mungkin untuk melakukan langkah selanjutnya dalam hubungan dengan perusahaan, seperti berlangganan deposito berjangka. Ini dapat dilihat dari perbandingan target "yes" dan "no" dalam Gambar 3.
 - Bulan: Mei
+
 Bulan Mei menunjukkan kecenderungan yang lebih tinggi untuk berlangganan deposito berjangka. Hal ini mungkin terkait dengan faktor musiman atau keadaan ekonomi yang khusus pada bulan tersebut yang mendorong orang untuk melakukan investasi jangka panjang. Ini dapat dilihat dari banyaknya orang yang mendaftar deposito berjangka pada Bulan Mei dalam Gambar 3.
 
 
 ## Data Preparation
 1. Teknik *Winsorize*
+
 Teknik *winsorize* bertujuan untuk mengatasi *outlier* dalam dataset. *Outlier* merupakan nilai-nilai ekstrem yang dapat mengganggu analisis dan kinerja model *machine learning*. Dalam proses ini, setiap kolom numerik diproses secara terpisah, di mana nilai-nilai di luar rentang persentil 5 terendah dan persentil 95 tertinggi digantikan dengan nilai ambang batas tersebut. Dengan menggantikan nilai-nilai *outlier*, *winsorization* membantu meningkatkan kestabilan dan kinerja model *machine learning*.
+
 2. *Standard Scaling*
+
 Proses standarisasi fitur numerik dalam dataset, yang bertujuan untuk membuat distribusi nilai dari setiap fitur numerik memiliki *mean* 0 dan standar deviasi 1. Dalam langkah ini, digunakan objek *StandardScaler* dari *library scikit-learn* untuk melakukan standarisasi. Setiap fitur numerik diproses secara terpisah dan diubah sedemikian rupa sehingga nilai-nilainya memiliki distribusi normal standar. Beberapa model *machine learning* seperti *logistic regression* dan SVM sensitif terhadap skala data. Dengan melakukan *standard scaling*, setiap fitur memiliki pengaruh yang seimbang pada model.
+
 3. *One Hot Encoding*
+
 Dalam tahapan ini, digunakan objek *OneHotEncoder* dari *library scikit-learn*. Data kategorikal dari kolom-kolom yang dipilih diubah menjadi representasi biner yang disimpan dalam variabel *encoded_data*. Banyak algoritma *machine learning* tidak dapat langsung menangani variabel kategorikal. Dengan menggunakan *one hot encoding*, informasi dari variabel kategorikal bisa dimasukkan ke dalam model tanpa menimbulkan bias.
-4. *Label Encodin*g:
+
+4. *Label Encoding*:
+
 *Label encoding* digunakan untuk mengubah nilai-nilai kategorikal menjadi bilangan bulat.
 *Label encoding* ini digunakan untuk mengkodekan variabel target 'y', dengan mengubah 'no' menjadi 0 dan 'yes' menjadi 1. Hal ini memungkinkan penggunaan algoritma *machine learning* yang memerlukan variabel target dalam bentuk numerik, seperti *logistic regression, decision trees* dan *random forests*.
+
 5. Teknik *Undersampling*
+
 Dalam kasus ini, terdapat ketimpangan yang signifikan antara jumlah sampel dalam kelas mayoritas dan jumlah sampel dalam kelas minoritas. *Undersampling* melibatkan penghapusan sampel-sampel dari kelas mayoritas sehingga proporsi antara kelas mayoritas dan kelas minoritas menjadi lebih seimbang. Hal ini dapat membantu model untuk belajar dengan lebih baik dari kelas minoritas tanpa terpengaruh oleh dominasi dari kelas mayoritas. Hasil dari *undersampling* ini adalah 5289 baris data 'yes' dan 'no'.
+
 6. *Split Train* dan *Test Data*
+
 *Split train* dan *test data* dengan persentase 80% *train* dan 20% *test data*. Dipastikan juga bahwa data *train* dan data *test* dengan proporsi yang sama, yaitu 50% dengan menggunakan *Stratified Shuffle Split*.
 
 
@@ -124,27 +143,40 @@ Berikut adalah algoritma *machine learning* yang digunakan:
 
 ##### Tahapan pemodelan *machine learning*
 1. *Import library* model yang akan digunakan:
-   Tahap pertama adalah mengimpor *library* atau modul yang menyediakan implementasi dari model *machine learning* yang akan digunakan dalam proyek. *Library* yang digunakan yaitu *pandas* untuk mengolah data dan *Scikit-learn (sklearn)* untuk model-model klasifikasi seperti *Logistic Regression*, *Linear SVM*, *Decision Trees*, *Random Forest*, dan *XGBoost*.
+
+Tahap pertama adalah mengimpor *library* atau modul yang menyediakan implementasi dari model *machine learning* yang akan digunakan dalam proyek. *Library* yang digunakan yaitu *pandas* untuk mengolah data dan *Scikit-learn (sklearn)* untuk model-model klasifikasi seperti *Logistic Regression*, *Linear SVM*, *Decision Trees*, *Random Forest*, dan *XGBoost*.
+
 2. Import dataset
-   Data *Bank Marketing* diunduh dari *website* [UCI Machine Learning Repository](https://archive.ics.uci.edu/dataset/222/bank+marketing) dan dimasukkan ke dalam *DataFrame Pandas*.
+
+Data *Bank Marketing* diunduh dari *website* [UCI Machine Learning Repository](https://archive.ics.uci.edu/dataset/222/bank+marketing) dan dimasukkan ke dalam *DataFrame Pandas*.
+
 3. Inisialisasi model dalam *dictionary*
-   Langkah selanjutnya adalah menginisialisasi setiap model dalam sebuah *dictionary*. Setiap model diinisialisasi dengan parameter *default*nya. Dalam kasus ini, *dictionary* bernama *dict_classifiers* digunakan untuk menyimpan model-model tersebut. Parameter *default* biasanya dipilih karena merupakan parameter paling sederhana yang disediakan oleh implementasi algoritma tersebut.
+
+Langkah selanjutnya adalah menginisialisasi setiap model dalam sebuah *dictionary*. Setiap model diinisialisasi dengan parameter *default*nya. Dalam kasus ini, *dictionary* bernama *dict_classifiers* digunakan untuk menyimpan model-model tersebut. Parameter *default* biasanya dipilih karena merupakan parameter paling sederhana yang disediakan oleh implementasi algoritma tersebut.
+
 4. *Training model*
-   Setelah model diinisialisasi, langkah selanjutnya adalah melatih (*train*) model menggunakan data *training*. Data *training* adalah *dataset* yang digunakan untuk mengajarkan model agar dapat mempelajari pola-pola atau hubungan dalam data. Proses pelatihan ini dilakukan dengan memanggil fungsi atau metode *fit*() pada setiap model, dengan menggunakan fitur-fitur dan label dari data *training*.
+
+Setelah model diinisialisasi, langkah selanjutnya adalah melatih (*train*) model menggunakan data *training*. Data *training* adalah *dataset* yang digunakan untuk mengajarkan model agar dapat mempelajari pola-pola atau hubungan dalam data. Proses pelatihan ini dilakukan dengan memanggil fungsi atau metode *fit*() pada setiap model, dengan menggunakan fitur-fitur dan label dari data *training*.
+
 5. Prediksi akurasi
-   Setelah model dilatih, langkah terakhir adalah melakukan prediksi pada data uji (*test data*) dan mengevaluasi akurasinya. Evaluasi ini dilakukan dengan menggunakan metrik-metrik seperti akurasi, *precision*, *recall*, dan *f1-score*. Prediksi pada data uji dilakukan dengan memanggil fungsi atau metode *predict*() pada setiap model, dengan menggunakan fitur-fitur dari data uji. Setelah mendapatkan prediksi, hasilnya dibandingkan dengan label sebenarnya pada data uji untuk menghitung metrik evaluasi yang sesuai.
+
+Setelah model dilatih, langkah terakhir adalah melakukan prediksi pada data uji (*test data*) dan mengevaluasi akurasinya. Evaluasi ini dilakukan dengan menggunakan metrik-metrik seperti akurasi, *precision*, *recall*, dan *f1-score*. Prediksi pada data uji dilakukan dengan memanggil fungsi atau metode *predict*() pada setiap model, dengan menggunakan fitur-fitur dari data uji. Setelah mendapatkan prediksi, hasilnya dibandingkan dengan label sebenarnya pada data uji untuk menghitung metrik evaluasi yang sesuai.
 
 ## Evaluation
 Untuk menentukan kinerja model, perlu untuk mengevaluasi model yang sudah dibangun. Model klasifikasi akan dievaluasi menggunakan kriteria evaluasi seperti akurasi, presisi (*precision*), *recall*, dan *f1-score*. Persamaan-persamaan berikut menunjukkan perhitungan untuk mendapatkan evaluasi model.	
 
 - Akurasi adalah rasio prediksi yang benar terhadap jumlah estimasi secara keseluruhan. Rumus untuk menghitung akurasi ditunjukkan dalam Persamaan berikut:
-  $$ *Accuracy* = {TP+TN \over(TP+TN+FP+FN)} $$
+
+  $$ Accuracy = {TP+TN \over(TP+TN+FP+FN)} $$
 - Presisi (*Precision*) merupakan perbandingan antara jumlah prediksi positif yang tepat dengan keseluruhan hasil prediksi positif. Presisi dihitung menggunakan persamaan berikut:
-  $$ *Precision* = {TP \over(TP+FP)} $$
+
+$$ Precision = {TP \over(TP+FP)} $$
 - *Recall* adalah perbandingan antara jumlah prediksi positif dengan jumlah data positif secara keseluruhan. *Recall* dihitung menggunakan persamaan berikut:
-  $$ *Recall* = {TP \over(TP+FN)} $$
+
+$$ Recall = {TP \over(TP+FN)} $$
 - *F1-score* adalah suatu bentuk keseimbangan yang menggabungkan akurasi dan *recall* dalam sebuah sistem. Ini merupakan nilai rata-rata harmonis antara presisi dan *recall*. *F1-score* dihitung menggunakan persamaan berikut:
-  $$ F1-score = {2* precision*recall \over precision+ recall} $$
+
+$$ F1-score = {2* precision*recall \over precision+ recall} $$
 
 
 ##### Hasil Evaluasi Model 
@@ -152,12 +184,12 @@ Untuk menentukan kinerja model, perlu untuk mengevaluasi model yang sudah dibang
 Tabel 1. Hasil evaluasi model *machine learning*
 </p>
 | *Classifier *        | *Train Accuracy* | *Test Accuracy* | *Precision (Class 0)* | *Recall (Class 0)* | *F1-score (Class 0)* | *Precision (Class 1)* | *Recall (Class 1)* | *F1-score (Class 1)* |
-|--------------------|----------------|---------------|---------------------|------------------|---------------------|---------------------|------------------|---------------------|
-| *Logistic Regression*| 0.8318         | 0.8417        | 0.84                | 0.84             | 0.84                | 0.84                | 0.85             | 0.84                |
-| *Linear SVM*       | 0.8737         | 0.8620        | 0.89                | 0.83             | 0.86                | 0.84                | 0.90             | 0.87                |
-| *Decision Tree*      | 1.0000         | 0.7944        | 0.80                | 0.79             | 0.79                | 0.79                | 0.80             | 0.80                |
-| *Random Forest*      | 0.9970         | 0.8563        | 0.87                | 0.84             | 0.85                | 0.85                | 0.87             | 0.86                |
-| *XGBoost*            | 0.9709         | 0.8691        | 0.89                | 0.85             | 0.87                | 0.85                | 0.89             | 0.87                |
+|----------------------|------------------|-----------------|-----------------------|--------------------|----------------------|-----------------------|--------------------|----------------------|
+| *Logistic Regression*| 0.8318           | 0.8417          | 0.84                  | 0.84               | 0.84                 | 0.84                  | 0.85               | 0.84                 |
+| *Linear SVM*         | 0.8737           | 0.8620          | 0.89                  | 0.83               | 0.86                 | 0.84                  | 0.90               | 0.87                 |
+| *Decision Tree*      | 1.0000           | 0.7944          | 0.80                  | 0.79               | 0.79                 | 0.79                  | 0.80               | 0.80                 |
+| *Random Forest*      | 0.9970           | 0.8563          | 0.87                  | 0.84               | 0.85                 | 0.85                  | 0.87               | 0.86                 |
+| *XGBoost*            | 0.9709           | 0.8691          | 0.89                  | 0.85               | 0.87                 | 0.85                  | 0.89               | 0.87                 |
 
 
 Berdasarkan hasil evaluasi model pada Tabel 1, berikut adalah kesimpulan yang didapat:
